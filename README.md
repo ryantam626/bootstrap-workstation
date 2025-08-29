@@ -38,3 +38,11 @@ sudo modprobe uinput
 sudo udevadm control --reload-rules && sudo udevadm trigger
 
 
+
+
+# ==========
+
+```bash
+command -v zsh | sudo tee -a /etc/shells
+sudo chsh -s "$(command -v zsh)" "${USER}"
+```
