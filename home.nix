@@ -224,4 +224,27 @@ in {
       '';
     };
   };
+
+  systemd.user.services.kmonad = {
+    Unit = {
+      Description = "KMonad keyboard remapper";
+      Documentation = "https://github.com/kmonad/kmonad";
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.kmonad}/bin/kmonad %h/bootstrap-workstation/dotfiles/kmonad/star-laptop.kbd";
+      Restart = "on-failure";
+      RestartSec = 3;
+
+      PrivateNetwork = true;
+      ProtectSystem = "strict";
+      ProtectHome = "read-only";
+      ReadWritePaths = [ "/dev/uinput" ];
+    };
+  };
 }
