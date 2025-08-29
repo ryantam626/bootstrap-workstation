@@ -27,6 +27,19 @@ in {
    pkgs.kmonad
    pkgs.go-task
    pkgs.wl-clipboard
+   (pkgs.stdenv.mkDerivation rec {
+    pname = "uv";
+    version = "latest";
+    src = pkgs.fetchurl {
+    url = "https://github.com/astral-sh/uv/releases/download/0.8.14/uv-x86_64-unknown-linux-gnu.tar.gz";
+    sha256 = "954add045f29f93191523175e4aea066996840e86c1b6339dee25f48b15b5ddb";
+    };
+    installPhase = ''
+    mkdir -p $out/bin
+    cp uv $out/bin/
+    chmod +x $out/bin/uv
+    '';
+    })
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
