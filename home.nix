@@ -130,6 +130,7 @@ in {
         bindkey '^[e' edit-command-line
       ''; in lib.mkMerge [ initExtraFirst initExtra ];
       shellAliases = {
+        copy = "wl-copy";
         clc = "git rev-parse HEAD | copy";
         "gc-" = "git checkout -";
         gcn = "git commit --no-verify";
@@ -182,7 +183,7 @@ in {
           plugin = tmuxPlugins.yank;
           extraConfig = ''
             set -g @yank_selection_mouse 'clipboard'
-            set -g @override_copy_command 'copy'
+            set -g @override_copy_command 'wl-copy'
           '';
         }
         {
@@ -190,7 +191,7 @@ in {
           extraConfig = ''
             set -g @thumbs-key v
             set -g @thumbs-position left
-            set -g @thumbs-command 'echo -n {} | /mnt/c/Windows/System32/clip.exe'
+            set -g @thumbs-command 'wl-copy'
           '';
         }
       ];
