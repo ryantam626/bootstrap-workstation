@@ -40,6 +40,7 @@ in {
     chmod +x $out/bin/uv
     '';
     })
+  pkgs.go_1_24
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
