@@ -8,8 +8,6 @@ in {
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
 
-  home.sessionVariables.EDITOR = "nvim";
-  home.sessionVariables.SHELL = "/home/${username}/.nix-profile/bin/zsh";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -63,7 +61,8 @@ in {
   #  /etc/profiles/per-user/rtam/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
+    SHELL = "/home/${username}/.nix-profile/bin/zsh";
   };
 
   # Let Home Manager install and manage itself.
