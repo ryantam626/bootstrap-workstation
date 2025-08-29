@@ -28,6 +28,7 @@ in {
    pkgs.cascadia-code
    pkgs.kmonad
    pkgs.go-task
+   pkgs.wl-clipboard
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
