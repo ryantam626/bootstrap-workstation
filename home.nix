@@ -235,7 +235,6 @@ in {
         set-option -ga terminal-overrides ",xterm-256color:Tc"
         # bg color of active pane, https://www.color-hex.com/color-palette/1029048, darkest
         setw -g window-active-style 'bg=#292e39'
-
       '';
     };
   };
@@ -291,24 +290,64 @@ in {
   };
 
   dconf.settings = {
+    "org/gnome/shell" = {
+      disabled-extensions = [
+        "ubuntu-dock@ubuntu.com"
+      ];
+    };
+
     "org/gnome/desktop/interface" = {
       cursor-theme = "Nordzy-cursors-white";
       cursor-size = 24;
     };
 
-# Also set it in the legacy location
     "org/gnome/desktop/wm/preferences" = {
       theme = "Nordzy-cursors-white";
     };
 
-# And in the shell settings
     "org/gnome/shell" = {
       cursor-theme = "Nordzy-cursors-white";
     };
 
     "org/gnome/desktop/peripherals/keyboard" = {
       delay = lib.hm.gvariant.mkUint32 201;
-        repeat-interval = lib.hm.gvariant.mkUint32 27;
+      repeat-interval = lib.hm.gvariant.mkUint32 27;
+    };
+    "org/gnome/mutter" = {
+      dynamic-workspaces = false;
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      num-workspaces = 5;
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      switch-to-workspace-1 = ["<Super>1"];
+      switch-to-workspace-2 = ["<Super>2"];
+      switch-to-workspace-3 = ["<Super>3"];
+      switch-to-workspace-4 = ["<Super>4"];
+      switch-to-workspace-5 = ["<Super>5"];
+
+      move-to-workspace-1 = ["<Super><Shift>1"];
+      move-to-workspace-2 = ["<Super><Shift>2"];
+      move-to-workspace-3 = ["<Super><Shift>3"];
+      move-to-workspace-4 = ["<Super><Shift>4"];
+      move-to-workspace-5 = ["<Super><Shift>5"];
+
+      switch-to-workspace-left = [];
+      switch-to-workspace-right = [];
+    };
+
+    "org/gnome/shell/keybindings" = let empty = lib.hm.gvariant.mkEmptyArray "s"; in {
+      switch-to-application-1 = empty;
+      switch-to-application-2 = empty;
+      switch-to-application-3 = empty;
+      switch-to-application-4 = empty;
+      switch-to-application-5 = empty;
+      open-new-window-application-1 = empty;
+      open-new-window-application-2 = empty;
+      open-new-window-application-3 = empty;
+      open-new-window-application-4 = empty;
+      open-new-window-application-5 = empty;
     };
   };
 
