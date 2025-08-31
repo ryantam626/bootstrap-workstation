@@ -1,0 +1,52 @@
+" Better search defaults
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+let mapleader = " "
+
+" Escape to clean highlights
+nnoremap <silent> <esc> <esc>:noh<return><esc>
+nnoremap <silent> <leader>ac :%y<CR>
+
+set clipboard^=unnamedplus,unnamed
+
+set highlightedyank
+set surround
+set noideajoin
+
+nnoremap <silent> <leader>i /```<CR>V?```<CR>jOky
+nnoremap <silent> <leader>k ?```<CR>V?```<CR>jOky
+nnoremap <silent> <leader>j /```<CR>V/```<CR>kOjy
+
+sethandler <C-2> a:vim
+sethandler <C-S-2> a:vim
+sethandler <C-6> a:vim
+sethandler <C-A> a:vim
+sethandler <C-B> a:ide
+sethandler <C-C> a:vim
+sethandler <C-E> a:ide
+sethandler <C-F> a:vim
+sethandler <C-G> a:vim
+sethandler <C-H> a:vim
+sethandler <C-I> a:vim
+sethandler <C-J> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-M> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-Q> a:vim
+sethandler <C-R> a:ide
+sethandler <C-S> a:vim
+sethandler <C-T> a:vim
+sethandler <C-U> a:vim
+sethandler <C-V> a:vim
+sethandler <C-W> a:ide
+sethandler <C-X> a:vim
+sethandler <C-Y> a:vim
+sethandler <C-[> a:vim
+sethandler <C-\> a:vim
+sethandler <C-]> a:vim

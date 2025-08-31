@@ -44,21 +44,6 @@ in {
   pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -291,6 +276,7 @@ in {
     ".local/share/themes/rtam".source = ./dotfiles/themes/rtam;
     ".local/share/gnome-shell/extensions/disable-workspace-animation@ethnarque".source = "${pkgs.gnomeExtensions.disable-workspace-animation}/share/gnome-shell/extensions/disable-workspace-animation@ethnarque";
     ".local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com".source = "${pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"}/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com";
+    ".ideavimrc".source = ./dotfiles/intellij/.ideavimrc;
   };
 
   dconf.settings = {
