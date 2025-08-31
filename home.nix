@@ -341,8 +341,17 @@ in {
       move-to-workspace-4 = ["<Super><Shift>4"];
       move-to-workspace-5 = ["<Super><Shift>5"];
 
-      switch-to-workspace-left = [];
-      switch-to-workspace-right = [];
+# Unbind Ctrl+Shift+Alt+Arrow keys
+      move-to-monitor-left = [];
+      move-to-monitor-right = [];
+      move-to-monitor-up = [];
+      move-to-monitor-down = [];
+
+# Also check these if they exist
+      move-to-workspace-left = [];
+      move-to-workspace-right = [];
+      move-to-workspace-up = [];
+      move-to-workspace-down = [];
     };
 
     "org/gnome/shell/keybindings" = let empty = lib.hm.gvariant.mkEmptyArray "s"; in {
