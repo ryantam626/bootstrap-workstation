@@ -50,3 +50,6 @@ sethandler <C-Y> a:vim
 sethandler <C-[> a:vim
 sethandler <C-\> a:vim
 sethandler <C-]> a:vim
+
+set easymotion
+map <Leader>e <Plug>(easymotion-prefix)
