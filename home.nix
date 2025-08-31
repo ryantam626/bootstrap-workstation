@@ -287,7 +287,7 @@ in {
   };
 
   home.file = {
-    ".config/hypr/wallpaper.png".source = ./wallpapers/dunkirk.png;
+    ".local/share/wallpapers".source = ./wallpapers;
     ".local/share/themes/rtam".source = ./dotfiles/themes/rtam;
     ".local/share/gnome-shell/extensions/disable-workspace-animation@ethnarque".source = "${pkgs.gnomeExtensions.disable-workspace-animation}/share/gnome-shell/extensions/disable-workspace-animation@ethnarque";
     ".local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com".source = "${pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"}/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com";
@@ -334,6 +334,12 @@ in {
     };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 5;
+    };
+
+    "org/gnome/desktop/background" = {
+      picture-uri = "file:///home/${username}/.local/share/wallpapers/dunkirk.png";
+      picture-uri-dark = "file:///home/${username}/.local/share/wallpapers/dunkirk.png";
+      picture-options = "zoom";
     };
 
     "org/gnome/desktop/wm/keybindings" = {
