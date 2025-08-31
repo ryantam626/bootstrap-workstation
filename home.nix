@@ -42,6 +42,7 @@ in {
     })
   pkgs.go_1_24
   pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"
+  pkgs.gnome46Extensions."highlight-focus@pimsnel.com"
   ];
 
   # Home Manager can also manage your environment variables through
@@ -276,6 +277,7 @@ in {
     ".local/share/themes/rtam".source = ./dotfiles/themes/rtam;
     ".local/share/gnome-shell/extensions/disable-workspace-animation@ethnarque".source = "${pkgs.gnomeExtensions.disable-workspace-animation}/share/gnome-shell/extensions/disable-workspace-animation@ethnarque";
     ".local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com".source = "${pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"}/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com";
+    ".local/share/gnome-shell/extensions/highlight-focus@pimsnel.com".source = "${pkgs.gnome46Extensions."highlight-focus@pimsnel.com"}/share/gnome-shell/extensions/highlight-focus@pimsnel.com";
     ".ideavimrc".source = ./dotfiles/intellij/.ideavimrc;
   };
 
@@ -290,6 +292,7 @@ in {
       enabled-extensions = [
         "disable-workspace-animation@ethnarque"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "highlight-focus@pimsnel.com"
       ];
 
     };
@@ -303,8 +306,19 @@ in {
       cursor-size = 24;
     };
 
+    "org/gnome/shell/extensions/highlight-focus" = {
+      border-color = "#88c0d0";
+      border-width = 5;
+      border-radius = 6;
+      disable-hiding = true;
+      hide-delay = 0;
+    };
+
     "org/gnome/desktop/wm/preferences" = {
       theme = "Nordzy-cursors-white";
+
+      border-width = 2;
+      focus-mode = "sloppy";  # or "click"
     };
 
     "org/gnome/shell" = {
