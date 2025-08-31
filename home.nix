@@ -41,7 +41,6 @@ in {
     '';
     })
   pkgs.go_1_24
-  pkgs.nordzy-cursor-theme
   pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"
   ];
 
