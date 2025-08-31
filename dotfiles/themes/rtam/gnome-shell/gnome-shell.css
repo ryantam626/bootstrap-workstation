@@ -1,0 +1,13 @@
+#panel .panel-button {
+  background-color: rgba(76, 86, 106, 0.85);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#panel {
+  background-color: rgba(76, 86, 106, 0.65);
+}
+
+#panel .panel-button:hover {
+  background-color: rgba(76, 86, 106, 0.85);
+}

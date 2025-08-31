@@ -42,6 +42,7 @@ in {
     })
   pkgs.go_1_24
   pkgs.nordzy-cursor-theme
+  pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -287,8 +288,9 @@ in {
 
   home.file = {
     ".config/hypr/wallpaper.png".source = ./wallpapers/dunkirk.png;
-    ".local/share/themes/${username}/gnome-shell/gnome-shell.css".source = ./dotfiles/gnome/gnome-shell.css;
+    ".local/share/themes/rtam".source = ./dotfiles/themes/rtam;
     ".local/share/gnome-shell/extensions/disable-workspace-animation@ethnarque".source = "${pkgs.gnomeExtensions.disable-workspace-animation}/share/gnome-shell/extensions/disable-workspace-animation@ethnarque";
+    ".local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com".source = "${pkgs.gnome46Extensions."user-theme@gnome-shell-extensions.gcampax.github.com"}/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com";
   };
 
   dconf.settings = {
@@ -301,8 +303,13 @@ in {
 
       enabled-extensions = [
         "disable-workspace-animation@ethnarque"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
 
+    };
+
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "rtam";
     };
 
     "org/gnome/desktop/interface" = {
