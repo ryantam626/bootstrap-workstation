@@ -30,7 +30,7 @@
 
 (deflayer navigation
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    pgdn pgup _    _    home end  _
+  _    _    _    _    _    _    ins  pgdn pgup _    _    home end  _
   _    _    _    _    _    _    left down up   rght _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
