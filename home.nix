@@ -287,13 +287,22 @@ in {
 
   home.file = {
     ".config/hypr/wallpaper.png".source = ./wallpapers/dunkirk.png;
+    ".local/share/themes/${username}/gnome-shell/gnome-shell.css".source = ./dotfiles/gnome/gnome-shell.css;
+    ".local/share/gnome-shell/extensions/disable-workspace-animation@ethnarque".source = "${pkgs.gnomeExtensions.disable-workspace-animation}/share/gnome-shell/extensions/disable-workspace-animation@ethnarque";
   };
 
   dconf.settings = {
     "org/gnome/shell" = {
+      disable-user-extensions = false;
+
       disabled-extensions = [
         "ubuntu-dock@ubuntu.com"
       ];
+
+      enabled-extensions = [
+        "disable-workspace-animation@ethnarque"
+      ];
+
     };
 
     "org/gnome/desktop/interface" = {
