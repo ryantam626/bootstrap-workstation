@@ -78,6 +78,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     SHELL = "/home/${username}/.nix-profile/bin/zsh";
+    PATH = "$HOME/.local/bin:$PATH";
   };
 
   # Let Home Manager install and manage itself.
