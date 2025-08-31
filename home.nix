@@ -285,4 +285,7 @@ in {
     };
   };
 
+  home.file = {
+    ".config/hypr/wallpaper.png".source = ./wallpapers/dunkirk.png;
+  };
 }
