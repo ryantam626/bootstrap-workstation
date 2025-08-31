@@ -41,6 +41,7 @@ in {
     '';
     })
   pkgs.go_1_24
+  pkgs.nordzy-cursor-theme
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -287,5 +288,35 @@ in {
 
   home.file = {
     ".config/hypr/wallpaper.png".source = ./wallpapers/dunkirk.png;
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      cursor-theme = "Nordzy-cursors-white";
+      cursor-size = 24;
+    };
+
+# Also set it in the legacy location
+    "org/gnome/desktop/wm/preferences" = {
+      theme = "Nordzy-cursors-white";
+    };
+
+# And in the shell settings
+    "org/gnome/shell" = {
+      cursor-theme = "Nordzy-cursors-white";
+    };
+
+    "org/gnome/desktop/peripherals/keyboard" = {
+      delay = lib.hm.gvariant.mkUint32 201;
+        repeat-interval = lib.hm.gvariant.mkUint32 27;
+    };
+  };
+
+  home.pointerCursor = {
+    name = "Nordzy-cursors-white";
+    package = pkgs.nordzy-cursor-theme;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
   };
 }
