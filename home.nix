@@ -352,6 +352,9 @@ in {
       move-to-workspace-right = [];
       move-to-workspace-up = [];
       move-to-workspace-down = [];
+
+      cycle-windows = ["<Super>j"];
+      cycle-windows-backward = ["<Super>k"];
     };
 
     "org/gnome/shell/keybindings" = let empty = lib.hm.gvariant.mkEmptyArray "s"; in {
