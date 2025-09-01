@@ -369,6 +369,9 @@ in {
 
       cycle-windows = ["<Super>j"];
       cycle-windows-backward = ["<Super>k"];
+
+      toggle-maximized = ["<Super>t"];
+      toggle-on-all-workspaces = ["<Super>b"];
     };
 
     "org/gnome/shell/keybindings" = let empty = lib.hm.gvariant.mkEmptyArray "s"; in {
