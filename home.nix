@@ -353,9 +353,6 @@ in {
       move-to-workspace-up = [];
       move-to-workspace-down = [];
 
-      cycle-windows = ["<Super>j"];
-      cycle-windows-backward = ["<Super>k"];
-
       toggle-maximized = ["<Super>t"];
       toggle-on-all-workspaces = ["<Super>b"];
     };
