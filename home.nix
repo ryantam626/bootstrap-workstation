@@ -291,6 +291,7 @@ in {
       enabled-extensions = [
         "disable-workspace-animation@ethnarque"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "sage-window-manager@github.ryantam626"
       ];
 
     };
