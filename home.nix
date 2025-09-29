@@ -285,6 +285,7 @@ in {
 
       disabled-extensions = [
         "ubuntu-dock@ubuntu.com"
+        "ding@rastersoft.com"
       ];
 
       enabled-extensions = [
