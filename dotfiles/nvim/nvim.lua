@@ -92,22 +92,11 @@ vim.wo.number = true
 -- Enable cursorline
 vim.o.cursorline = true
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.g.clipboard = {
-  name = 'wl-clipboard',
-  copy = {
-    ['+'] = 'wl-copy',
-    ['*'] = 'wl-copy',
-  },
-  paste = {
-    ['+'] = 'wl-paste --no-newline',
-    ['*'] = 'wl-paste --no-newline',
-  },
-  cache_enabled = 0,
-}
-vim.opt.clipboard = "unnamedplus"
+-- [[ Copy/paste with system clipboard ]]
+vim.cmd('nnoremap gy "+y')
+vim.cmd('xnoremap gy "+y')
+vim.cmd('nnoremap gp "+p')
+vim.cmd('xnoremap gp "+P')
 
 -- Enable break indent
 vim.o.breakindent = true
