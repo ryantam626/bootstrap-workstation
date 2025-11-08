@@ -248,6 +248,29 @@ in {
     };
   };
 
+  systemd.user.services."kmonad-a1" = {
+    Unit = {
+      Description = "KMonad keyboard remapper for a1 keyboard";
+      Documentation = "https://github.com/kmonad/kmonad";
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.kmonad}/bin/kmonad %h/bootstrap-workstation/dotfiles/kmonad/a1.kbd";
+      Restart = "on-failure";
+      RestartSec = 3;
+
+      PrivateNetwork = true;
+      ProtectSystem = "strict";
+      ProtectHome = "read-only";
+      ReadWritePaths = [ "/dev/uinput" ];
+    };
+  };
+
   systemd.user.services."kmonad-ducky" = {
     Unit = {
       Description = "KMonad keyboard remapper for ducky keyboard";
