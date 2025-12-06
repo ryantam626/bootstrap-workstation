@@ -27,6 +27,7 @@ in {
    pkgs.kmonad
    pkgs.go-task
    pkgs.wl-clipboard
+   pkgs.rustup
    (pkgs.stdenv.mkDerivation rec {
     pname = "uv";
     version = "latest";
