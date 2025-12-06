@@ -38,7 +38,9 @@ in {
     installPhase = ''
     mkdir -p $out/bin
     cp uv $out/bin/
+    cp uvx $out/bin/
     chmod +x $out/bin/uv
+    chmod +x $out/bin/uvx
     '';
     })
   pkgs.go_1_24
