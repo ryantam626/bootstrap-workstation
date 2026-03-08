@@ -274,6 +274,29 @@ in {
     };
   };
 
+  systemd.user.services."kmonad-ergodox-ez" = {
+    Unit = {
+      Description = "KMonad keyboard remapper for ergodox-ez keyboard";
+      Documentation = "https://github.com/kmonad/kmonad";
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.kmonad}/bin/kmonad %h/bootstrap-workstation/dotfiles/kmonad/ergodox-ez.kbd";
+      Restart = "on-failure";
+      RestartSec = 3;
+
+      PrivateNetwork = true;
+      ProtectSystem = "strict";
+      ProtectHome = "read-only";
+      ReadWritePaths = [ "/dev/uinput" ];
+    };
+  };
+
   systemd.user.services."kmonad-ducky" = {
     Unit = {
       Description = "KMonad keyboard remapper for ducky keyboard";

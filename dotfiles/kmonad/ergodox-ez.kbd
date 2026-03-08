@@ -1,0 +1,17 @@
+(defcfg
+  ;; Likely need this to be modified for others
+  input  (device-file "/dev/input/by-id/usb-ZSA_Technology_Labs_ErgoDox_EZ-event-kbd")
+  output (uinput-sink "My KMonad output"
+    "/usr/bin/sleep 1 && /usr/bin/setxkbmap -option compose:ralt")
+  cmp-seq ralt  ;; Set the compose key to `RightAlt'
+
+  ;; Won't define every key, so fallthrough is necessary
+  fallthrough true
+
+  ;; Disable any command-execution in KMonad for now
+  allow-cmd false
+)
+
+(defsrc f24)
+
+(deflayer default lmet)
