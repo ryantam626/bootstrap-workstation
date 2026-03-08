@@ -28,6 +28,8 @@ in {
    pkgs.go-task
    pkgs.wl-clipboard
    pkgs.rustup
+   pkgs.pnpm
+   pkgs.nodejs_24
    (pkgs.stdenv.mkDerivation rec {
     pname = "uv";
     version = "latest";
@@ -118,6 +120,10 @@ in {
         autoload -U edit-command-line
         zle -N edit-command-line
         bindkey '^[e' edit-command-line
+
+        export PNPM_HOME="/home/rtam/.local/share/pnpm"
+        export PATH="$PNPM_HOME:$PATH"
+
       ''; in lib.mkMerge [ initExtraFirst initExtra ];
       shellAliases = {
         copy = "wl-copy";
