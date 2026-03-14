@@ -30,6 +30,7 @@ in {
    pkgs.rustup
    pkgs.pnpm
    pkgs.nodejs_24
+   pkgs.xclip
    (pkgs.stdenv.mkDerivation rec {
     pname = "uv";
     version = "latest";
@@ -126,7 +127,7 @@ in {
 
       ''; in lib.mkMerge [ initExtraFirst initExtra ];
       shellAliases = {
-        copy = "wl-copy";
+        copy = "xclip -selection clipboard";
         clc = "git rev-parse HEAD | copy";
         "gc-" = "git checkout -";
         gcn = "git commit --no-verify";
@@ -179,7 +180,7 @@ in {
           plugin = tmuxPlugins.yank;
           extraConfig = ''
             set -g @yank_selection_mouse 'clipboard'
-            set -g @override_copy_command 'wl-copy'
+            set -g @override_copy_command 'xclip -selection clipboard'
           '';
         }
         {
@@ -187,7 +188,7 @@ in {
           extraConfig = ''
             set -g @thumbs-key v
             set -g @thumbs-position left
-            set -g @thumbs-command 'wl-copy'
+            set -g @thumbs-command 'echo -n {} | xclip -selection clipboard -i'
           '';
         }
       ];
