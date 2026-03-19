@@ -119,6 +119,8 @@ in {
       ''; initExtra = lib.mkOrder 1000 ''
         eval "$(task --completion zsh)"
 
+        source ${./bin/slop-workspace-utils.sh}
+
         # Edit current line
         autoload -U edit-command-line
         zle -N edit-command-line
@@ -127,6 +129,8 @@ in {
         export PNPM_HOME="/home/rtam/.local/share/pnpm"
         export PATH="$PNPM_HOME:$PATH"
 
+        # Show SLOP indicator in prompt if we're in a SLOP workspace (requires the slop-workspace-utils.sh script above)
+        PROMPT='$(slop_prompt_indicator)%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
       ''; in lib.mkMerge [ initExtraFirst initExtra ];
       shellAliases = {
         copy = "xclip -selection clipboard";
