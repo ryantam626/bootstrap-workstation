@@ -31,6 +31,7 @@ in {
    pkgs.pnpm
    pkgs.nodejs_24
    pkgs.xclip
+   pkgs.postgresql
    pkgs.htop
    (pkgs.stdenv.mkDerivation rec {
     pname = "uv";
