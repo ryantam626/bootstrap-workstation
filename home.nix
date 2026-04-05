@@ -27,6 +27,7 @@ in {
    pkgs.kmonad
    pkgs.go-task
    pkgs.wl-clipboard
+   pkgs.ripgrep
    pkgs.rustup
    pkgs.pnpm
    pkgs.nodejs_24
