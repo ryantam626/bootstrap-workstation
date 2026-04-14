@@ -130,6 +130,8 @@ in {
         export PNPM_HOME="/home/rtam/.local/share/pnpm"
         export PATH="$PNPM_HOME:$PATH"
 
+        export PATH="$HOME/.devcontainers/bin:$PATH"
+
         # Show SLOP indicator in prompt if we're in a SLOP workspace (requires the slop-workspace-utils.sh script above)
         PROMPT='$(slop_prompt_indicator)%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
       ''; in lib.mkMerge [ initExtraFirst initExtra ];
