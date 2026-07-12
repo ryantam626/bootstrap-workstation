@@ -21,6 +21,7 @@ in {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+   pkgs.emacs
    pkgs.jq
    pkgs.curl
    pkgs.cascadia-code
@@ -131,6 +132,7 @@ in {
         export PATH="$PNPM_HOME:$PATH"
 
         export PATH="$HOME/.devcontainers/bin:$PATH"
+        export PATH="$HOME/.config/emacs/bin:$PATH"
 
         # Show SLOP indicator in prompt if we're in a SLOP workspace (requires the slop-workspace-utils.sh script above)
         PROMPT='$(slop_prompt_indicator)%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
