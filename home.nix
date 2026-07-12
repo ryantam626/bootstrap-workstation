@@ -411,7 +411,7 @@ in {
       dynamic-workspaces = false;
     };
     "org/gnome/desktop/wm/preferences" = {
-      num-workspaces = 5;
+      num-workspaces = 6;
     };
 
     "org/gnome/desktop/background" = {
@@ -426,6 +426,8 @@ in {
       switch-to-workspace-3 = ["<Super>3"];
       switch-to-workspace-4 = ["<Super>4"];
       switch-to-workspace-5 = ["<Super>5"];
+      switch-to-workspace-6 = ["<Super>q"];
+      move-to-workspace-6 = ["<Super><Shift>q"];
 
 # Unbind Ctrl+Shift+Alt+Arrow keys
       move-to-monitor-left = [];
@@ -449,11 +451,13 @@ in {
       switch-to-application-3 = empty;
       switch-to-application-4 = empty;
       switch-to-application-5 = empty;
+      switch-to-application-6 = empty;
       open-new-window-application-1 = empty;
       open-new-window-application-2 = empty;
       open-new-window-application-3 = empty;
       open-new-window-application-4 = empty;
       open-new-window-application-5 = empty;
+      open-new-window-application-6 = empty;
     };
   };
 
